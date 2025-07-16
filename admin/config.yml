@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Title", name: "title", widget: "string" }
+      - { label: "Product ID", name: "id", widget: "string" }
+      - { label: "Image URL", name: "image", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Air", "Sleep", "Body"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Buy Link", name: "buy_link", widget: "string" }
+      - { label: "Wisdom Hook", name: "wellness_hook", widget: "text" }
+      - { label: "How to Use", name: "how_to_use", widget: "text" }
+      - { label: "Bonus Tip", name: "bonus_tip", widget: "text" }
+      - { label: "Good For", name: "good_for", widget: "text" }
