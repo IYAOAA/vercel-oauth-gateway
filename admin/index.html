@@ -7,20 +7,32 @@
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
-    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <script>
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.reload();
-          });
-        }
-      });
-      window.netlifyIdentity.init();
-      window.CMS.init();
-    </script>
     <div id="nc-root"></div>
+
+    <script>
+      function startCMS() {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.reload();
+              });
+            }
+          });
+          window.netlifyIdentity.init();
+        }
+        window.CMS.init();
+      }
+
+      // Make sure the DOM is fully loaded
+      if (document.readyState === "complete") {
+        startCMS();
+      } else {
+        window.addEventListener("load", startCMS);
+      }
+    </script>
   </body>
 </html>
