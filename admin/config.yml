@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: IYAOAA/1000HomeVibes
   branch: main
 
 media_folder: "assets/uploads"
