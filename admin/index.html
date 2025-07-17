@@ -11,7 +11,6 @@
   </head>
   <body>
     <div id="nc-root"></div>
-
     <script>
       function startCMS() {
         if (window.netlifyIdentity) {
@@ -27,7 +26,6 @@
         window.CMS.init();
       }
 
-      // Make sure the DOM is fully loaded
       if (document.readyState === "complete") {
         startCMS();
       } else {
