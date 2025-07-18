@@ -1,9 +1,9 @@
-backend: 
+backend:
   name: github
   repo: IYAOAA/1000HomeVibes
   branch: main
-  base_url: https://github-oauth-gateway.vercel.app
-  auth_endpoint: api/auth
+  base_url: https://oauth-gateway.onrender.com
+  auth_endpoint: auth
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
