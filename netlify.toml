@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
+  from = "/cms/*"
+  to = "/cms/index.html"
   status = 200
