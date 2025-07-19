@@ -2,7 +2,7 @@ backend:
   name: github
   repo: IYAOAA/1000HomeVibes
   branch: main
-  base_url: https://oauth-gateway.onrender.com
+  base_url: https://render-oauth-gateway.onrender.com
   auth_endpoint: auth
 
 media_folder: "assets/uploads"
