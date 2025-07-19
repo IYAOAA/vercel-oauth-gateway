@@ -21,4 +21,3 @@ collections:
       - { label: "Category", name: "category", widget: "select", options: ["Air", "Sleep", "Body"] }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Buy Link", name: "buy_link", widget: "string" }
-
