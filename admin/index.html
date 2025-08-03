@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>1000 Home Vibes CMS</title>
-
-    <!-- 🔐 Netlify Identity (login support) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- 🧠 Decap CMS core -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- 🚀 This is where CMS mounts -->
     <div id="cms">
       <p style="text-align:center;">Loading admin panel...</p>
     </div>
+
+    <!-- 🧠 Load CMS AFTER DOM is ready -->
+    <script>
+      window.addEventListener("load", function () {
+        var s = document.createElement("script");
+        s.src = "https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js";
+        document.body.appendChild(s);
+      });
+    </script>
   </body>
 </html>
