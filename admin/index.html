@@ -2,19 +2,28 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>1000 Home Vibes CMS</title>
+    <title>1000 Home Vibes Admin</title>
+
+    <!-- ✅ Required for Git Gateway login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <!-- ✅ This is where the CMS loads -->
     <div id="cms">
-      <p style="text-align:center;">Loading admin panel...</p>
+      <p style="text-align: center;">Loading Admin Panel...</p>
     </div>
 
-    <!-- 🧠 Load CMS AFTER DOM is ready -->
+    <!-- ✅ Load Decap CMS after DOM is ready -->
     <script>
       window.addEventListener("load", function () {
         var s = document.createElement("script");
         s.src = "https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js";
+        s.setAttribute("data-manual-init", "true"); // avoid auto init
+        s.onload = () => {
+          if (typeof CMS !== "undefined") {
+            CMS.init();
+          }
+        };
         document.body.appendChild(s);
       });
     </script>
